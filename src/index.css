@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --color-accent: #00df81;
+  --color-accent-rgb: 0, 223, 129;
+  --color-accent-hover: #10f193;
+  --color-accent-subtle: #0a2e1d;
+  --color-bg-base: #070b09;
+  --color-bg-surface: #0a130f;
+  --color-bg-surface-elevated: #0f1d16;
+  --color-border: #172b21;
+  --color-border-subtle: #121f19;
+  --color-text-main: #e3ece7;
+  --color-text-muted: #7e9587;
+  --color-glow: rgba(0, 223, 129, 0.3);
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom discreet scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* High Contrast Mode accessibility specific enhancements */
+[data-theme="high-contrast"] body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="high-contrast"] a:focus,
+[data-theme="high-contrast"] button:focus {
+  outline: 2px solid #ffff00 !important;
+  outline-offset: 2px !important;
+}
+
+/* Dynamic glow helper */
+.theme-glow {
+  box-shadow: 0 0 20px var(--color-glow);
+}
+
+
